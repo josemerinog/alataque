@@ -1,0 +1,17 @@
+<h1>Problemas</h1>
+
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>description</th>
+    <th>Open</th>
+  </tr>
+<% @problems.each do |problem| %>
+    <tr>
+      <td><%= problem.title %></td>
+      <td><%= problem.description %></td>
+      <td><%= problem.open %></td>
+    </tr>
+
+<% end %>
+</table>
