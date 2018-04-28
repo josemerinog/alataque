@@ -4,6 +4,7 @@ class ProblemsController < ApplicationController
   end
 
   def show
+    @problem = Problem.find(params[:id])
   end
 
   def new
@@ -12,6 +13,8 @@ class ProblemsController < ApplicationController
 
 def create
   @problem = Problem.new(problems_params)
+  @problem.open = true
+  # @problem.user = current_user
   if @problem.save
     redirect_to problems_path
   else
